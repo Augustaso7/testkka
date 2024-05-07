@@ -1,0 +1,8 @@
+{
+  "name": "Testkka",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "d9c746c8"
+}
