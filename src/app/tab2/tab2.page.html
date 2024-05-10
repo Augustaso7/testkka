@@ -13,8 +13,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card color="secondary" *ngFor="let actividad of actividades">
-    <img alt="Silhouette of mountains" src={{actividad.img}} />
+  <ion-card color="secondary" *ngFor="let actividad of actividades" >
+    <img (click)="goToTab1(actividad.id)" alt="Silhouette of mountains" src={{actividad.img}} />
     <ion-card-header>
       <ion-card-title>{{actividad.titulo}}</ion-card-title>
       <ion-card-subtitle>{{actividad.subtitulo}}</ion-card-subtitle>
@@ -23,5 +23,7 @@
     <ion-card-content>
       {{actividad.descripcion}}
     </ion-card-content>
+
+    <ion-button color="danger" (click)="pasarDatos()">Hola</ion-button>
   </ion-card>
 </ion-content>

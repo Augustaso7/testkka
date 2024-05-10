@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 // Si uso ngOnInit, es buena practica agregar la interfaz OnInit en el export para asegurar que el metodo se ejecute correctamente
 export class Tab3Page implements OnInit {
   catFacts: any;
+  mensaje: any;
 
   constructor(private apiService: ApiService) {}
 
@@ -21,6 +22,13 @@ export class Tab3Page implements OnInit {
         console.error('Error al obtener los datos:', error);
       }
     });
+
+    const datosString = sessionStorage.getItem('datos'); // Obtiene los datos de sessionStorage
+    if (datosString) {
+      const datos = JSON.parse(datosString);
+      this.mensaje = datos.mensaje;
+      sessionStorage.removeItem('datos'); // Elimina los datos de sessionStorage después de usarlos
+    }
   }
 
 }
