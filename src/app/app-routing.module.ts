@@ -11,7 +11,11 @@ const routes: Routes = [
   },
   { path: 'tab3', component: Tab3Page },
   { path: 'tab2', component: Tab2Page },
-  { path: 'tab1/:id', component: Tab1Page }
+  { path: 'tab1/:id', component: Tab1Page },  {
+    path: 'ejem',
+    loadChildren: () => import('./ejem/ejem.module').then( m => m.EjemPageModule)
+  }
+
 ];
 @NgModule({
   imports: [
